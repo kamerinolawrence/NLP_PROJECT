@@ -87,4 +87,15 @@ Stratification: Ensure proportional representation of sentiment classes in both 
 
 **Tweet Length**: Added a numeric feature representing the number of words or characters in each tweet.
 
+# **Outcome**
+We prepared the dataset to be suitable for machine learning models such as:
+
+Logistic Regression
+
+Naive Bayes
+
+SMOTE
+
+Support Vector Machine (SVM)
+
 
