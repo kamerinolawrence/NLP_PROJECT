@@ -38,13 +38,13 @@ The dataset has been sourced from data.world. The data contains 9,070 rows and 2
 
 From the classification report, the dataset includes at least four sentiment categories:
 
-I can't tell — unclear sentiment
+I can't tell **—** unclear sentiment
 
-Negative emotion — dissatisfaction, complaints
+Negative emotion **—** dissatisfaction, complaints
 
-No emotion toward brand or product — neutral comments
+No emotion toward brand or product **—** neutral comments
 
-Positive emotion — satisfaction
+Positive emotion **—** satisfaction
 
 # Observations
 We discovered that the class distribution seems imbalanced, with the “No emotion toward brand or product” class having the highest support (1674 samples).
@@ -52,5 +52,39 @@ We discovered that the class distribution seems imbalanced, with the “No emoti
 We saw that the accuracy_score (67.07%) indicates that the model performs moderately well but may struggle with minority classes ("I can't tell").
 
 We saw that the data included noise or ambiguous labels due to the subjective nature of sentiment.
+
+# 3. Data Preparation
+
+**Data Cleaning**
+
+Handle Encoding Issues: Fix utf-8 by using appropriate encoding (latin1).
+
+Remove Noise: Strip URLs, user mentions (@username), hashtags, punctuation, and emojis.
+
+Normalize Text: Convert to lowercase and remove extra whitespace.
+
+Handle Missing Values: Drop rows with missing text or sentiment labels.(1 row of tweet_text was dropped and the whole column of emotion_in_a_tweet_is_directed_at was dropped).
+
+**Text Preprocessing**
+
+Tokenization: Split text into words using nltk.word_tokenize().
+
+Stopword Removal: Exclude common non-informative words.
+
+Stemming: Reduce words to their base form.
+
+Vectorization: Transform text into numerical form using TF-IDF.
+
+**Data Splitting**
+
+Train-Test Split: Divide the dataset (We used 70% train, 30% test).
+
+Stratification: Ensure proportional representation of sentiment classes in both sets(stratify = y)
+
+**Feature Engineering**
+
+**Text Vectorization**: Converted tweet text into numeric representations that machine learning models can use(TF-IDF Vectorizer).
+
+**Tweet Length**: Added a numeric feature representing the number of words or characters in each tweet.
 
 
