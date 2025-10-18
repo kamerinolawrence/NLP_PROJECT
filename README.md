@@ -12,7 +12,7 @@ Track brand reputation and customer satisfaction over time.
 
 Support marketing and product strategy decisions based on data-driven insights.
 
-In this project, we are aiming to build a machine learning model that can determine the sentiment of a tweet based on the content, whether it is positive, negative, or neutral.This is a Natural Language Processing (NLP) problem, useful for applications such as social media monitoring, brand-analysis, and customer-feedback tracking.
+In this project, we are aiming to build a machine learning model that can determine the sentiment of a tweet based on the content, whether it is **positive**, **negative**, or **neutral**.This is a Natural Language Processing (NLP) problem, useful for applications such as social media monitoring, brand-analysis, and customer-feedback tracking.
 
 # Key Business Questions
 
@@ -32,7 +32,7 @@ Enable automated monitoring of customer feedback at a certain scale.
 
 **Data Source**
 
-The dataset has been sourced from data.world. The data contains 9,070 rows and 2 columns
+The dataset has been sourced from data.world. The data contains 9,070 rows and 3 columns
 
 **Data Overview**
 
@@ -47,7 +47,7 @@ No emotion toward brand or product **—** neutral comments
 Positive emotion **—** satisfaction
 
 # Observations
-We discovered that the class distribution seems imbalanced, with the “No emotion toward brand or product” class having the highest support (1674 samples).
+We discovered that the class distribution seems **imbalanced**, with the “No emotion toward brand or product” class having the highest support (1674 samples).
 
 We saw that the accuracy_score (67.07%) indicates that the model performs moderately well but may struggle with minority classes ("I can't tell").
 
