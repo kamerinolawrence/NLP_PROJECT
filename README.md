@@ -106,20 +106,84 @@ We'll evaluate both:
 
 Accuracy — general correctness
 
-Macro F1-score — fairness across all sentiment classes (important for imbalanced data)
+Macro F1-score — fairness across all sentiment classes (important for imbalanced data
 
-**Model Performance Comparison**
+Linear SVM achieved the highest overall accuracy (~66%) and balanced sentiment detection.
 
- 	                   Model	Accuracy	Macro F1-score
-  
-0. 	Logistic Regression (SMOTE)	0.625505	0.422787
-1. 	
-2. 	Logistic Regression (Balanced)	0.602352	0.411582
-3. 	
-4. 	Linear SVM	           0.658214	0.411007
-5. 	
-6. 	Naive Bayes           	0.665564	0.329489
-7. 	
-8.  Naive Bayes (Tuned TF-IDF)	0.666667	0.325756
+Naive Bayes performed almost as well, making it a great lightweight alternative.
+
+Balanced/SMOTE Logistic Regression improved recall for minority classes but at the cost of accuracy.
+
+In text tasks, SVM and Naive Bayes often outperform Logistic Regression on sparse data like TF-IDF.
+
+# 6.**Building a Machine Learning Pipeline**
+
+To make the model training and prediction process more efficient, we combined our preprocessing, vectorization, and classification steps into a single Pipeline. A pipeline ensures that the same text cleaning and feature extraction steps are applied during training and when making predictions on new data.
+
+We will build a pipeline with the following components:
+
+**TFIDF Vectorizer**: Converts text into numerical features.
+
+**Linear SVM Classifier**: Learns to predict the sentiment of tweets.
+
+**Custom Text Cleaning Function**: Cleans and normalizes tweets (removes URLs, mentions, punctuation, etc.).
+
+# 7.** DEPLOYMENT**
+
+Model Deployment with Streamlit
+
+After training and evaluating our model, the next step is deployment there by making it accessible to users through a simple web app.
+
+We will use Streamlit, which is an interactive framework that allows us to create web interfaces for machine learning models with minimal code.
+
+Our Streamlit app will:
+
+Load the saved SVM pipeline (.pkl file)
+
+Accept a user’s tweet or text input
+
+show a bar code of the tweets
+
+Preprocess and classify the text
+
+Display the predicted sentiment
+
+**create a streamlit app scrptt**
+
+We will now create a new Python file named app.py that will handle:
+
+Loading the trained model
+
+Getting user input
+
+Making predictions
+
+Displaying the sentiment result
+
+**Create a retrain_model**
+
+We will now creat a new python file named **retrain_model.py** that will handle:
+
+Loading the trained model
+
+Loading the pipeline
+
+Allow changes to be made of the pipeline
+
+**Create BERT sentiment model Loader**
+
+We used the Cardiff NLP RoBERTa since our dataset is tweet-based. The model was intergrated in the SVM-model and run side by side in the streamlit app without overwriting the load_model(). The models run independently. Why we added BERT model:
+
+BERT understands meaning and not just words as in the SVM-model which counts words and has no concept of context.
+
+BERT is trained on massive text datasets and fine-tuned for sentiment on millions of tweets(can understand emotion).
+
+It is pre-trained on huge data.
+
+BERT uses something called self-attention, meaning it learns relationships between words in a sentence.
+
+**Summary**
+
+The SVM-model performs well but has some limitations when it came to give out sentiments and therefore we opted for BERT to run our sentiment predictions.
 
 
