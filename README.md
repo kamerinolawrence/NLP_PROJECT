@@ -128,7 +128,7 @@ We will build a pipeline with the following components:
 
 **Custom Text Cleaning Function**: Cleans and normalizes tweets (removes URLs, mentions, punctuation, etc.).
 
-# 7.** DEPLOYMENT**
+# 7.**DEPLOYMENT**
 
 Model Deployment with Streamlit
 
