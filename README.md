@@ -98,4 +98,28 @@ SMOTE
 
 Support Vector Machine (SVM)
 
+# **Model Performance Summary**
+
+After experimenting with several models and techniques (balancing, SMOTE, Naive Bayes, SVM, and tuned TF-IDF), we can now compare their performance in one clear table.
+
+We'll evaluate both:
+
+Accuracy — general correctness
+
+Macro F1-score — fairness across all sentiment classes (important for imbalanced data)
+
+**Model Performance Comparison**
+
+ 	                   Model	Accuracy	Macro F1-score
+  
+0. 	Logistic Regression (SMOTE)	0.625505	0.422787
+1. 	
+2. 	Logistic Regression (Balanced)	0.602352	0.411582
+3. 	
+4. 	Linear SVM	           0.658214	0.411007
+5. 	
+6. 	Naive Bayes           	0.665564	0.329489
+7. 	
+8.  Naive Bayes (Tuned TF-IDF)	0.666667	0.325756
+
 
