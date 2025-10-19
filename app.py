@@ -12,7 +12,7 @@ import warnings
 warnings.filterwarnings("ignore", message="Some weights of the model checkpoint")
 
 # Streamlit page config
-st.set_page_config(page_title="Sentiment Classifier", page_icon="💬", layout="centered")
+st.set_page_config(page_title="🎯 Sentiment Classifier", page_icon="🧩", layout="centered")
 
 # NLTK setup 
 nltk.download('stopwords', quiet=True)
