@@ -13,7 +13,14 @@ warnings.filterwarnings("ignore", message="Some weights of the model checkpoint"
 
 # Streamlit page config
 st.set_page_config(page_title="Sentiment Classifier", page_icon="🧩", layout="centered")
-
+st.markdown(
+    """
+    <h1 style='text-align: center; color: #4B9CD3;'>
+        🎯 Sentiment Classifier
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 # NLTK setup 
 nltk.download('stopwords', quiet=True)
 stop_words = set(stopwords.words('english'))
@@ -69,7 +76,7 @@ def load_bert_model():
 tokenizer, bert_model = load_bert_model()
 
 
-st.title("🎯 Sentiment Classifier")
+st.title("Sentiment Classifier")
 st.write("Compare predictions from your **SVM** and **BERT** models.")
 
 st.markdown("---")
