@@ -11,6 +11,9 @@ import torch
 import warnings
 warnings.filterwarnings("ignore", message="Some weights of the model checkpoint")
 
+# Streamlit page config
+st.set_page_config(page_title="Sentiment Classifier", page_icon="💬", layout="centered")
+
 # NLTK setup 
 nltk.download('stopwords', quiet=True)
 stop_words = set(stopwords.words('english'))
@@ -65,8 +68,6 @@ def load_bert_model():
 
 tokenizer, bert_model = load_bert_model()
 
-# Streamlit page config
-st.set_page_config(page_title="Sentiment Classifier", page_icon="💬", layout="centered")
 
 st.title("Sentiment Classifier")
 st.write("Compare predictions from your **SVM** and **BERT** models.")
